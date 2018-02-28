@@ -6,6 +6,8 @@ Prep-Data/*
 logs/*
 Language-Definition/main.pdf
 keys/*
+gfp_vals.*
+gf2n_vals.*
 
 # Personal CONFIG file #
 ##############################
