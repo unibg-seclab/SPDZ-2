@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 # (C) 2017 University of Bristol. See License.txt
 
