@@ -1,0 +1,10 @@
+a = sint.get_raw_input_from(0)
+b = sint.get_raw_input_from(1)
+
+c = a + b
+c.reveal_to(0)
+print_ln("a + b revealed to player 0")
+
+d = a * b
+d.reveal_to(1)
+print_ln("a * b revealed to player 1")
