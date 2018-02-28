@@ -30,7 +30,7 @@ LIB = libSPDZ.a
 LIBSIMPLEOT = SimpleOT/libsimpleot.a
 
 
-all: gen_input online offline externalIO
+all: gen_input get_output online offline externalIO
 
 ifeq ($(USE_NTL),1)
 all: she-offline
@@ -41,6 +41,8 @@ online: Fake-Offline.x Server.x Player-Online.x Check-Offline.x
 offline: $(OT_EXE) Check-Offline.x
 
 gen_input: gen_input_f2n.x gen_input_fp.x
+
+get_output: get_output_fp.x
 
 externalIO: client-setup.x bankers-bonus-client.x bankers-bonus-commsec-client.x
 
@@ -80,6 +82,9 @@ gen_input_f2n.x: Scripts/gen_input_f2n.cpp $(COMMON)
 
 gen_input_fp.x: Scripts/gen_input_fp.cpp $(COMMON)
 	$(CXX) $(CFLAGS) Scripts/gen_input_fp.cpp	-o gen_input_fp.x $(COMMON) $(LDLIBS)
+
+get_output_fp.x: Scripts/get_output_fp.cpp $(COMMON)
+	$(CXX) $(CFLAGS) Scripts/get_output_fp.cpp	-o get_output_fp.x $(COMMON) $(LDLIBS)
 
 client-setup.x: client-setup.cpp $(COMMON) $(PROCESSOR)
 	$(CXX) $(CFLAGS) -o $@ $^ $(LDLIBS)
